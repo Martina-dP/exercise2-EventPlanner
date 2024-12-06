@@ -30,20 +30,23 @@ public class DelPinoMartinaEvent {
     public LocalDate getDate() {
         return date;
     }
-    public Priority getPriority() {
-        return priority;
-    }
     public ArrayList<DelPinoMartinaEventTask> getTasks() {
         return tasks;
     }
 
     @Override
     public String toString() {
+        int totalDone = 0;
+        for (DelPinoMartinaEventTask task : tasks) {
+            if (task.getCompleted()){
+                totalDone++;
+            }
+        }
         return "DelPinoMartinaEvent{" +
-                "title='" + title + ":\n" +
-                ", date=" + date + ":\n" +
-                ", priority=" + priority + ":\n" +
-                ", tasks=" + tasks +
+                "title: " + title + "," +
+                "date: " + date + "," +
+                "priority: " + priority + "," +
+                "tasks completed: " + totalDone + " " + "total tasks: " + tasks.size() +
                 '}';
     }
 }

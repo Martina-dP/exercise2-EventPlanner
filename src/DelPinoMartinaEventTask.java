@@ -2,8 +2,8 @@ public class DelPinoMartinaEventTask {
     private String text;
     private Boolean isCompleted;
 
-    public DelPinoMartinaEventTask(Boolean isCompleted, String text) {
-        this.isCompleted = isCompleted;
+    public DelPinoMartinaEventTask(String text) {
+        this.isCompleted = false;
         this.text = text;
     }
 
@@ -17,6 +17,8 @@ public class DelPinoMartinaEventTask {
     public void setCompleted(Boolean completed) {
         isCompleted = completed;
     }
+
+
 
     @Override
     public String toString() {
